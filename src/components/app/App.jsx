@@ -1,28 +1,31 @@
 import './App.css';
 import React, { useState } from 'react';
 import TasksMain from '../tasks/tasks';
-import { fragments } from './fragmentStyle.js'
+import { fragments } from './fragmentStyle.js';
 
 function App() {
   let db = [
     {
       id: 1,
       name: 'To Do',
-      count: 3,
-      tasks: ['Christmas Banners', 'Redo Portfolio']
+      tasks: ['Christmas Banners', 'Redo Portfolio'],
     },
     {
       id: 2,
       name: 'In Progress',
-      count: 1,
       tasks: ['Coffee Break', 'Updating Portfolio']
     },
     {
-      id: 2,
+      id: 3,
       name: 'Review',
-      count: 1,
       tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com']
     },
+    {
+      id: 4,
+      name: 'Done',
+      tasks: ['Style Guide', 'Component Library', 'Sticker Components']
+    },
+
   ];
   const [data, setNotes] = useState(db);
   return (
@@ -34,15 +37,25 @@ function App() {
             <h1 className='tasks-main__img-header'>Project Example</h1>
             <div className='tasks-main-blocks'>
               <TasksMain
-                {...data[0]}
-                bgColor={fragments.fragment_to_do}
+                data={data[0]}
+                mainColor={fragments.fragment_toDo_main_color}
+                borderColor={fragments.fragment_toDo_border_color}
               />
-              <TasksMain 
-              {...data[1]}
-              bgColor={fragments.fragment_2}
-               />
-              <TasksMain {...data[2]} />
-              
+              <TasksMain
+                data={data[1]}
+                mainColor={fragments.fragment_inProgress_main_color}
+                borderColor={fragments.fragment_inProgress_border_color}
+              />
+              <TasksMain
+                data={data[2]}
+                mainColor={fragments.fragment_Review_main_color}
+                borderColor={fragments.fragment_Review_border_color}
+              />
+              <TasksMain
+                data={data[3]}
+                mainColor={fragments.fragment_Done_main_color}
+                borderColor={fragments.fragment_Done_border_color}
+              />
             </div>
           </div>
         </div>
