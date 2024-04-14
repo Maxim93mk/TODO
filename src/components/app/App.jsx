@@ -9,21 +9,25 @@ function App() {
       id: 1,
       name: 'To Do',
       tasks: ['Christmas Banners', 'Redo Portfolio'],
+      userStatus: ['Label','4r5ty']
     },
     {
       id: 2,
       name: 'In Progress',
-      tasks: ['Coffee Break', 'Updating Portfolio']
+      tasks: ['Coffee Break', 'Updating Portfolio'],
+      userStatus: ['Always', 'Webflow']
     },
     {
       id: 3,
       name: 'Review',
-      tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com']
+      tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
+      userStatus: ['Release', 'Feedback', 'Sourcing']
     },
     {
       id: 4,
       name: 'Done',
-      tasks: ['Style Guide', 'Component Library', 'Sticker Components']
+      tasks: ['Style Guide', 'Component Library', 'Sticker Components'],
+      userStatus: ['UI']
     },
 
   ];

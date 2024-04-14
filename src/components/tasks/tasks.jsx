@@ -4,8 +4,13 @@ import '../tasks/css/tasks.css'
 
 function TasksMain({data, mainColor, borderColor}) {
     let blockTasksHeader = data.name;
+    let userStatus = data.userStatus.map((elem)=>{
+        // console.log(elem);
+       return elem;
+  });  
+  console.log(userStatus)
     let tasksList = data.tasks.map((elem) => {
-        return <TaskItem taskName={elem} mainColor = {mainColor} />
+        return <TaskItem taskName={elem} mainColor = {mainColor} userStatus = {userStatus}/>
     });
 
     return (
