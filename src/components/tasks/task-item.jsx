@@ -3,7 +3,7 @@ import TaskUser from "./tasks-user";
 import foto_1 from "./img/foto_1.svg";
 import './css/task-item.css';
 
-function TaskItem({ taskName }) {
+function TaskItem({taskName}) {
     return (
         <>
             <div className="task-item">

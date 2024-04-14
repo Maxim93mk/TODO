@@ -3,11 +3,12 @@
     margin-top: 42px;
     max-width: 300px;
     width: 100%;
-    background-color: #59B4D1;
+    height: 100%;
+    /* background-color: #59B4D1; */
 }
 
 .tasks-block-line{
-    background-color: #50a2bc;
+    /* background-color: #50a2bc; */
      border-radius: 4px 4px 0px 0px; 
      height: 5px;
 }
