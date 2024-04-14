@@ -1,15 +1,18 @@
 import React from "react";
 import TaskItem from "./task-item";
+import '../tasks/css/tasks.css'
 
-function Tasks(){
+function TasksMain({ blockTasksHeader }) {
     return (
         <>
-        <div>
-        <h2>head</h2>
-        <TaskItem />
-        </div>
+            <div className="tasks-block">
+                <div className="tasks-block-line"></div>
+                    <h2 className="tasks-block__header">{blockTasksHeader}</h2>
+                    <TaskItem taskName="Christmas Banners" />   
+                    <TaskItem taskName="Redo Portfolio" /> 
+            </div>
         </>
     );
 }
 
-export default Tasks;
+export default TasksMain;

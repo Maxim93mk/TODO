@@ -1,16 +1,25 @@
 import './App.css';
 import React from 'react';
-import TasksIndx from '../tasks/index.js';
-
+import TasksMain from '../tasks/tasks';
 
 function App() {
   return (
     <>
-    <main>
-    <h1>Project Example</h1>
-    <TasksIndx />
-    </main>
-   </>
+    
+      <main className='tasks-main'>
+        <div className='container'>
+          <div className='tasks-main__img'>
+             <h1 className='tasks-main__img-header'>Project Example</h1>
+             <div className='tasks-main-blocks'>
+                <TasksMain blockTasksHeader="To Do" />
+                <TasksMain blockTasksHeader="In Progress" />
+                <TasksMain blockTasksHeader="Review" />
+                <TasksMain blockTasksHeader="Done" />
+             </div>
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
 

@@ -1,12 +1,12 @@
 import React from "react";
-import foto_1 from "./img/foto_1.svg";
+import './css/task-user.css';
 
-function TaskUser() {
+function TaskUser({img, descr, text}) {
     return (
         <>
-            <div>
-                <img src={foto_1} alt="фото1" />
-                <div>texxxx</div>
+            <div className="user">
+                <img src={img} alt={descr} />
+                <div className="user-status">{text}</div>
             </div>
         </>
     );

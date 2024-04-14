@@ -1,0 +1,18 @@
+.task-item{
+    display: flex;
+    flex-direction: column;
+    margin:  10px;
+}
+
+.task-item-list{
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 15px 10px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.task-item-header{
+    font-size: 14px;
+    font-weight: 500;
+}
