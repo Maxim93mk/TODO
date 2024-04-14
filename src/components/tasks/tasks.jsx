@@ -5,7 +5,7 @@ import '../tasks/css/tasks.css'
 function TasksMain({data, mainColor, borderColor}) {
     let blockTasksHeader = data.name;
     let tasksList = data.tasks.map((elem) => {
-        return <TaskItem taskName={elem} />
+        return <TaskItem taskName={elem} mainColor = {mainColor} />
     });
 
     return (
