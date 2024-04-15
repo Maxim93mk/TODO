@@ -8,8 +8,13 @@ function App() {
     {
       id: 1,
       name: 'To Do',
-      tasks: ['Christmas Banners', 'Redo Portfolio'],
-      userStatus: ['Label']
+      // cards: [
+      //   {
+         tasks: ['Christmas Banners', 'Redo Portfolio'],
+         userStatus: ['Label'],
+      //   }
+      // ],
+      
     },
     {
       id: 2,
@@ -21,7 +26,7 @@ function App() {
       id: 3,
       name: 'Review',
       tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
-      userStatus: ['Release']
+      userStatus: ['Release', 'Feedback', 'Sourcing']
     },
     {
       id: 4,
