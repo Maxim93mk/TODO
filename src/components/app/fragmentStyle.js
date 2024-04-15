@@ -3,7 +3,7 @@ const fragment_toDo_main_color = {
 };
 
 const fragment_toDo_border_color = {
-    backgroundColor: '#50a2bc;',
+    backgroundColor: '#50a2bc',
 };
 
 const fragment_inProgress_main_color = {

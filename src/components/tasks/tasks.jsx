@@ -10,10 +10,7 @@ function TasksMain({data, mainColor, borderColor}) {
 //   });  
 //   console.log(userStatus)
     let tasksList = data.tasks.map((elem) => {
-        return <TaskItem taskName={elem} mainColor = {mainColor} userStatus = {data.userStatus.map((elem)=>{
-            // console.log(elem);
-           return elem;
-      })}/>
+        return <TaskItem taskName={elem} mainColor = {mainColor} />
     });
 
     return (
