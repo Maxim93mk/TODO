@@ -9,19 +9,19 @@ function App() {
       id: 1,
       name: 'To Do',
       tasks: ['Christmas Banners', 'Redo Portfolio'],
-      userStatus: ['Label','4r5ty']
+      userStatus: ['Label']
     },
     {
       id: 2,
       name: 'In Progress',
       tasks: ['Coffee Break', 'Updating Portfolio'],
-      userStatus: ['Always', 'Webflow']
+      userStatus: ['Always']
     },
     {
       id: 3,
       name: 'Review',
       tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
-      userStatus: ['Release', 'Feedback', 'Sourcing']
+      userStatus: ['Release']
     },
     {
       id: 4,
