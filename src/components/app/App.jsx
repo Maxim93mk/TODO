@@ -7,33 +7,33 @@ function App() {
   let db = [
     {
       id: 1,
-      name: 'To Do',
+      name: ['To Do', 'In Progress', 'Review', 'Done'],
       // cards: [
       //   {
          tasks: ['Christmas Banners', 'Redo Portfolio'],
-         userStatus: ['Label'],
+         userStatus: ['Label', 'Always', 'Release', 'Feedback', 'Sourcing', 'UI'],
       //   }
       // ],
       
     },
-    {
-      id: 2,
-      name: 'In Progress',
-      tasks: ['Coffee Break', 'Updating Portfolio'],
-      userStatus: ['Always']
-    },
-    {
-      id: 3,
-      name: 'Review',
-      tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
-      userStatus: ['Release', 'Feedback', 'Sourcing']
-    },
-    {
-      id: 4,
-      name: 'Done',
-      tasks: ['Style Guide', 'Component Library', 'Sticker Components'],
-      userStatus: ['UI']
-    },
+    // {
+    //   id: 2,
+    //   name: 'In Progress',
+    //   // tasks: ['Coffee Break', 'Updating Portfolio'],
+    //   // userStatus: ['Always']
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Review',
+    //   // tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
+    //   // userStatus: ['Release', 'Feedback', 'Sourcing']
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Done',
+    //   // tasks: ['Style Guide', 'Component Library', 'Sticker Components'],
+    //   // userStatus: ['UI']
+    // },
 
   ];
   const [data, setNotes] = useState(db);
@@ -51,17 +51,17 @@ function App() {
                 borderColor={fragments.fragment_toDo_border_color}
               />
               <TasksMain
-                data={data[1]}
+                data={data[0]}
                 mainColor={fragments.fragment_inProgress_main_color}
                 borderColor={fragments.fragment_inProgress_border_color}
               />
               <TasksMain
-                data={data[2]}
+                data={data[0]}
                 mainColor={fragments.fragment_Review_main_color}
                 borderColor={fragments.fragment_Review_border_color}
               />
               <TasksMain
-                data={data[3]}
+                data={data[0]}
                 mainColor={fragments.fragment_Done_main_color}
                 borderColor={fragments.fragment_Done_border_color}
               />
