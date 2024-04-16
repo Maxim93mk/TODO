@@ -3,8 +3,17 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({ data, mainColor, borderColor , cardsTitle}) {
-console.log(cardsTitle)
+function TasksMain({ data, mainColor, borderColor , cardsTitle, tasks, status, user}) {
+
+// function randomNumber(min, max) {
+//         return Math.floor(Math.random() * (max - min) + min);
+//     }
+
+// let countTasks = randomNumber(0, 10);
+// let taskIndex = randomNumber(0, 9);
+// let statusIndex = randomNumber(0, 5);
+// let userIndex = randomNumber(0, 1);
+
     // // console.log(data.tasks.nameTask)
         // let cardsTitle = data[0].cards.map((elem, index) => {
         //     // console.log(elem)
@@ -13,9 +22,9 @@ console.log(cardsTitle)
         // let btn = document.querySelector('.x');
 
 // console.log(btn);
-        // let btn = document.querySelector('.x');
+        //  let btn = document.querySelector('.xz');
 
-        // console.log(btn);
+        //  console.log(btn);
 
     // console.log(blockTasksHeader);
     //  data.name.forEach((elem,index)=>{
@@ -47,6 +56,7 @@ console.log(cardsTitle)
                 <div className="tasks-block-line" style={borderColor}></div>
                 {/* {blockTasksHeader} */}
                 <h2 className="tasks-block__header">{cardsTitle}</h2>
+                <TaskItem taskName={tasks} mainColor = {mainColor} userStatus={status} user={user} />
                 {/* {tasksItem} */}
                 {/* <TaskItem taskName={blockTasksHeader} mainColor = {mainColor} /> */}
                 {/* <h2 className="tasks-block__header">{blockTasksHeader}</h2> */}
