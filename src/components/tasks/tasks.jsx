@@ -2,16 +2,23 @@ import React from "react";
 import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
-function TasksMain({data, mainColor, borderColor}) {
-    // let blockTasksHeader = 0;
+function TasksMain({ data, mainColor, borderColor }) {
+    // console.log(data.tasks.nameTask)
+        let tasksItem = data.tasks.map((elem, index) => {
+            console.log(elem)
+             return <TaskItem taskName={elem} mainColor={mainColor} data={data.userStatus[index]} />
+        });
+
+
+    // console.log(blockTasksHeader);
     //  data.name.forEach((elem,index)=>{
-    //     blockTasksHeader = <h2 className="tasks-block__header">{elem}</h2>;
-       
+    //     blockTasksHeader = ;
+
     // });
     // console.log(blockTasksHeader)
-    // let tasksList = data.tasks.map((elem, index) => {
-    //     // console.log(elem.tasks[index])
-    //     //  console.log(elem.tasks)
+    // let tasksList = data.map((elem, index) => {
+
+    //      console.log(elem)
     //  return  elem
     // });
     // let userStatusList = data.userStatus.map((elem, index) => {
@@ -24,14 +31,17 @@ function TasksMain({data, mainColor, borderColor}) {
     //  return  <TaskItem taskName={tasksList[index]} mainColor = {mainColor} userStatus={userStatusList[index]}/>
     // });
     // console.log(userStatusList)
-//     let userStatus = data.userStatus.map((elem) => {
-//         return elem;
-//    });
+    //     let userStatus = data.userStatus.map((elem) => {
+    //         return elem;
+    //    });
     return (
         <>
             <div className="tasks-block" style={mainColor}>
                 <div className="tasks-block-line" style={borderColor}></div>
-                {blockTasksHeader}
+                {/* {blockTasksHeader} */}
+                <h2 className="tasks-block__header">{data.name}</h2>
+                {tasksItem}
+                {/* <TaskItem taskName={blockTasksHeader} mainColor = {mainColor} /> */}
                 {/* <h2 className="tasks-block__header">{blockTasksHeader}</h2> */}
                 {/* <TaskItem taskName={tasksList.tasks[0]} mainColor = {mainColor} userStatus={tasksList.userStatus[0]}/>
                 <TaskItem taskName={tasksList.tasks[1]} mainColor = {mainColor} userStatus={tasksList.userStatus[1]}/>
