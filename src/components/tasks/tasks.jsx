@@ -2,13 +2,20 @@ import React from "react";
 import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
-function TasksMain({ data, mainColor, borderColor }) {
-    // console.log(data.tasks.nameTask)
-        let tasksItem = data.tasks.map((elem, index) => {
-            console.log(elem)
-             return <TaskItem taskName={elem} mainColor={mainColor} data={data.userStatus[index]} />
-        });
 
+function TasksMain({ data, mainColor, borderColor , cardsTitle}) {
+console.log(cardsTitle)
+    // // console.log(data.tasks.nameTask)
+        // let cardsTitle = data[0].cards.map((elem, index) => {
+        //     // console.log(elem)
+        //      return <h2 className="tasks-block__header">{elem}</h2>
+        // });
+        // let btn = document.querySelector('.x');
+
+// console.log(btn);
+        // let btn = document.querySelector('.x');
+
+        // console.log(btn);
 
     // console.log(blockTasksHeader);
     //  data.name.forEach((elem,index)=>{
@@ -39,8 +46,8 @@ function TasksMain({ data, mainColor, borderColor }) {
             <div className="tasks-block" style={mainColor}>
                 <div className="tasks-block-line" style={borderColor}></div>
                 {/* {blockTasksHeader} */}
-                <h2 className="tasks-block__header">{data.name}</h2>
-                {tasksItem}
+                <h2 className="tasks-block__header">{cardsTitle}</h2>
+                {/* {tasksItem} */}
                 {/* <TaskItem taskName={blockTasksHeader} mainColor = {mainColor} /> */}
                 {/* <h2 className="tasks-block__header">{blockTasksHeader}</h2> */}
                 {/* <TaskItem taskName={tasksList.tasks[0]} mainColor = {mainColor} userStatus={tasksList.userStatus[0]}/>
