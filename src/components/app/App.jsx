@@ -2,12 +2,12 @@ import './App.css';
 import React, { useState } from 'react';
 import TasksMain from '../tasks/tasks';
 import { fragments } from './fragmentStyle.js';
-import user_1 from "../tasks/img/foto_1.svg";
-import user_2 from "../tasks/img/foto_2.svg";
+import user_1 from "./img/foto_1.svg";
+import user_2 from "./img/foto_2.svg";
 
 function App() {
   let db = [
-{
+    {
       id: 1,
       cards: [
         'To Do',
@@ -27,86 +27,54 @@ function App() {
         'Component Library',
         'Sticker Components',
       ],
-        status: [
-          'Label',
-          'Always',
-          'Release',
-          'Feedback',
-          'Sourcing',
-          'UI',
-        ],
-        user: [
-          user_1,
-          user_2,
-        ]
+      status: [
+        'Label',
+        'Always',
+        'Release',
+        'Feedback',
+        'Sourcing',
+        'UI',
+      ],
+      user: [
+        user_1,
+        user_2,
+      ]
     }
- ];
-const [data, setNotes] = useState(db);
+  ];
 
-let styleCards = [
-  fragments.fragment_toDo_main_color,
-  fragments.fragment_inProgress_main_color, 
-  fragments.fragment_Review_main_color, 
-  fragments.fragment_Done_main_color
-];
-// function randomNumber(min, max) {
-//   return Math.floor(Math.random() * (max - min) + min);
-// }
+  const [data, setNotes] = useState(db);
 
-// let countTasks = randomNumber(0, 10);
-// let taskIndex = randomNumber(0, 9);
-// let statusIndex = randomNumber(0, 5);
-// let userIndex = randomNumber(0, 1);
+  let styleCards = [
+    fragments.fragment_toDo_main_color,
+    fragments.fragment_inProgress_main_color,
+    fragments.fragment_Review_main_color,
+    fragments.fragment_Done_main_color
+  ];
 
-let tasks = data[0].cards.map((elem,index) => {
-  return <TasksMain
-     data={data}
-     mainColor={styleCards[index][0]}
-     borderColor={styleCards[index][1]}
-     cardsTitle = {elem}
-    //  tasks = {data[0].tasks[taskIndex]}
-    //  status = {data[0].status[statusIndex]}
-    //  user = {data[0].user[userIndex]}
-  />
-});
+  let tasks = data[0].cards.map((elem, index) => {
+    return <TasksMain
+      data={data}
+      mainColor={styleCards[index][0]}
+      borderColor={styleCards[index][1]}
+      cardsTitle={elem}
+    />
+  });
 
 
-
-//  console.log(names);
-return (
-  <>
-    <main className='tasks-main'>
-      <div className='container'>
-        <div className='tasks-main__img'>
-          <h1 className='tasks-main__img-header'>Project Example</h1>
-          <div className='tasks-main-blocks'>
-            {tasks}
-            {/* <TasksMain
-                data={names}
-                mainColor={fragments.fragment_toDo_main_color}
-                borderColor={fragments.fragment_toDo_border_color}
-              /> */}
-            {/* <TasksMain
-                data={names}
-                mainColor={fragments.fragment_inProgress_main_color}
-                borderColor={fragments.fragment_inProgress_border_color}
-              /> */}
-            {/* <TasksMain
-                data={data[0]}
-                mainColor={fragments.fragment_Review_main_color}
-                borderColor={fragments.fragment_Review_border_color}
-              />
-              <TasksMain
-                data={data[0]}
-                mainColor={fragments.fragment_Done_main_color}
-                borderColor={fragments.fragment_Done_border_color}
-              /> */}
+  return (
+    <>
+      <main className='tasks-main'>
+        <div className='container'>
+          <div className='tasks-main__img'>
+            <h1 className='tasks-main__img-header'>Project Example</h1>
+            <div className='tasks-main-blocks'>
+              {tasks}
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-  </>
-);
+      </main>
+    </>
+  );
 }
 
 export default App;
