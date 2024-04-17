@@ -7,33 +7,8 @@ import user_2 from "../tasks/img/foto_2.svg";
 
 function App() {
   let db = [
-    // {
-    //   id: 1,
-    //   name: 'To Do',
-    //   tasks: [
-    //     'Christmas Banners',
-    //     'Redo Portfolio'],
-    //         userStatus: 
-    //     [
-    //       'Label',
-    //       'UI',
-    //     ],
-
-    //   // {
-    //   //   nameTask:
-    //   //     [
-    //   //       'Christmas Banners',
-    //   //       'Label',
-    //   //     ],
-    //   //   // userStatus: 
-    //   //   // [
-    //   //   //   'Label',
-    //   //   //   'UI',
-    //   //   // ],
-    //   // }
-    // },
 {
-      id: 2,
+      id: 1,
       cards: [
         'To Do',
         'In Progress',
@@ -65,53 +40,6 @@ function App() {
           user_2,
         ]
     }
-  // ];
-// {
-//   id: 1,
-//   name: ['To Do', 'In Progress', 'Review', 'Done'],
-//   // cards: [
-//   //   {
-//   tasks: [
-//     'Christmas Banners',
-//     'Redo Portfolio',
-//     'Coffee Break',
-//     'Updating Portfolio',
-//     'Release to Figma Community',
-//     'User Feedback',
-//     'Background images from humaaans.com',
-//     'Style Guide',
-//     'Component Library',
-//     'Sticker Components'
-//   ],
-//   userStatus: [
-//     'Label',
-//     'Always',
-//     'Release',
-//     'Feedback',
-//     'Sourcing',
-//     'UI'
-//   ],
-//   //   }
-//   // ], 
-// },
-// {
-//   id: 2,
-//   name: 'In Progress',
-//   // tasks: ['Coffee Break', 'Updating Portfolio'],
-//   // userStatus: ['Always']
-// },
-// {
-//   id: 3,
-//   name: 'Review',
-//   // tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
-//   // userStatus: ['Release', 'Feedback', 'Sourcing']
-// },
-// {
-//   id: 4,
-//   name: 'Done',
-//   // tasks: ['Style Guide', 'Component Library', 'Sticker Components'],
-//   // userStatus: ['UI']
-// },
  ];
 const [data, setNotes] = useState(db);
 
