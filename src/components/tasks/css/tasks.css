@@ -12,9 +12,15 @@
 }
 
 .tasks-block__header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.tasks-block__title{
     color: #FFFFFF;
     font-size: 16px;
-    font-weight: 700;
-    margin-top: 11px;
-    margin-left: 36px;
+    font-weight: 700;    
 }

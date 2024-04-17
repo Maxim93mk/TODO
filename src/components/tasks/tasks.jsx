@@ -3,7 +3,7 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({data, mainColor, borderColor, cardsTitle}) {
+function TasksMain({data, mainColor, borderColor, cardsTitle, cardsIcons}) {
 
     function randomNumber(min, max) {
         let rand = min + Math.random() * (max + 1 - min);
@@ -24,7 +24,11 @@ function TasksMain({data, mainColor, borderColor, cardsTitle}) {
         <>
             <div className="tasks-block" style={mainColor}>
                 <div className="tasks-block-line" style={borderColor}></div>
-                <h2 className="tasks-block__header">{cardsTitle}</h2>
+                <div className="tasks-block__header">
+                    <img src={cardsIcons} />
+                    <h2 className="tasks-block__title">{cardsTitle}</h2>
+                </div>
+                
                 {Task}
             </div>
         </>
