@@ -2,69 +2,37 @@ import './App.css';
 import React, { useState } from 'react';
 import TasksMain from '../tasks/tasks';
 import { fragments } from './fragmentStyle.js';
+import { dataList } from './data.js';
 
 function App() {
-  let db = [
-    {
-      id: 1,
-      name: 'To Do',
-      // cards: [
-      //   {
-         tasks: ['Christmas Banners', 'Redo Portfolio'],
-         userStatus: ['Label'],
-      //   }
-      // ],
-      
-    },
-    {
-      id: 2,
-      name: 'In Progress',
-      tasks: ['Coffee Break', 'Updating Portfolio'],
-      userStatus: ['Always']
-    },
-    {
-      id: 3,
-      name: 'Review',
-      tasks: ['Release to Figma Community', 'User Feedback', 'Background images from humaaans.com'],
-      userStatus: ['Release', 'Feedback', 'Sourcing']
-    },
-    {
-      id: 4,
-      name: 'Done',
-      tasks: ['Style Guide', 'Component Library', 'Sticker Components'],
-      userStatus: ['UI']
-    },
+  
+ const [data, setNotes] = useState(dataList.data);
 
+  let styleCards = [
+    fragments.fragment_toDo_main_color,
+    fragments.fragment_inProgress_main_color,
+    fragments.fragment_Review_main_color,
+    fragments.fragment_Done_main_color
   ];
-  const [data, setNotes] = useState(db);
+
+  let tasks = data[0].cards.map((elem, index) => {
+    return <TasksMain
+      data={data}
+      mainColor={styleCards[index][0]}
+      borderColor={styleCards[index][1]}
+      cardsTitle={elem}
+    />
+  });
+
+
   return (
     <>
-
       <main className='tasks-main'>
         <div className='container'>
           <div className='tasks-main__img'>
             <h1 className='tasks-main__img-header'>Project Example</h1>
             <div className='tasks-main-blocks'>
-              <TasksMain
-                data={data[0]}
-                mainColor={fragments.fragment_toDo_main_color}
-                borderColor={fragments.fragment_toDo_border_color}
-              />
-              <TasksMain
-                data={data[1]}
-                mainColor={fragments.fragment_inProgress_main_color}
-                borderColor={fragments.fragment_inProgress_border_color}
-              />
-              <TasksMain
-                data={data[2]}
-                mainColor={fragments.fragment_Review_main_color}
-                borderColor={fragments.fragment_Review_border_color}
-              />
-              <TasksMain
-                data={data[3]}
-                mainColor={fragments.fragment_Done_main_color}
-                borderColor={fragments.fragment_Done_border_color}
-              />
+              {tasks}
             </div>
           </div>
         </div>

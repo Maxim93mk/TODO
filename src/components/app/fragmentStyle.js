@@ -33,12 +33,8 @@ const fragment_Done_border_color = {
 
 
 export const fragments = {
-    fragment_toDo_main_color: fragment_toDo_main_color,
-    fragment_toDo_border_color: fragment_toDo_border_color,
-    fragment_inProgress_main_color: fragment_inProgress_main_color,
-    fragment_inProgress_border_color: fragment_inProgress_border_color,
-    fragment_Review_main_color: fragment_Review_main_color,
-    fragment_Review_border_color: fragment_Review_border_color,
-    fragment_Done_main_color: fragment_Done_main_color,
-    fragment_Done_border_color: fragment_Done_border_color
-};
+    fragment_toDo_main_color: [fragment_toDo_main_color, fragment_toDo_border_color],
+    fragment_inProgress_main_color: [fragment_inProgress_main_color, fragment_inProgress_border_color],
+    fragment_Review_main_color: [fragment_Review_main_color, fragment_Review_border_color],
+    fragment_Done_main_color: [fragment_Done_main_color, fragment_Done_border_color]
+}
