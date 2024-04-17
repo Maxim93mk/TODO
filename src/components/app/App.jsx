@@ -38,7 +38,7 @@ function App() {
         'To Do',
         'In Progress',
         'Review',
-        'Done'
+        'Done',
       ],
       tasks: [
         'Christmas Banners',
@@ -50,7 +50,7 @@ function App() {
         'Background images from humaaans.com',
         'Style Guide',
         'Component Library',
-        'Sticker Components'
+        'Sticker Components',
       ],
         status: [
           'Label',
@@ -58,11 +58,11 @@ function App() {
           'Release',
           'Feedback',
           'Sourcing',
-          'UI'
+          'UI',
         ],
         user: [
           user_1,
-          user_2
+          user_2,
         ]
     }
   // ];
@@ -114,20 +114,21 @@ function App() {
 // },
  ];
 const [data, setNotes] = useState(db);
+
 let styleCards = [
   fragments.fragment_toDo_main_color,
   fragments.fragment_inProgress_main_color, 
   fragments.fragment_Review_main_color, 
   fragments.fragment_Done_main_color
 ];
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+// function randomNumber(min, max) {
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
 
-let countTasks = randomNumber(0, 10);
-let taskIndex = randomNumber(0, 9);
-let statusIndex = randomNumber(0, 5);
-let userIndex = randomNumber(0, 1);
+// let countTasks = randomNumber(0, 10);
+// let taskIndex = randomNumber(0, 9);
+// let statusIndex = randomNumber(0, 5);
+// let userIndex = randomNumber(0, 1);
 
 let tasks = data[0].cards.map((elem,index) => {
   return <TasksMain
@@ -135,9 +136,9 @@ let tasks = data[0].cards.map((elem,index) => {
      mainColor={styleCards[index][0]}
      borderColor={styleCards[index][1]}
      cardsTitle = {elem}
-     tasks = {data[0].tasks[taskIndex]}
-     status = {data[0].status[statusIndex]}
-     user = {data[0].user[userIndex]}
+    //  tasks = {data[0].tasks[taskIndex]}
+    //  status = {data[0].status[statusIndex]}
+    //  user = {data[0].user[userIndex]}
   />
 });
 
@@ -147,7 +148,6 @@ let tasks = data[0].cards.map((elem,index) => {
 return (
   <>
     <main className='tasks-main'>
-      <button className='xz'>test</button>
       <div className='container'>
         <div className='tasks-main__img'>
           <h1 className='tasks-main__img-header'>Project Example</h1>
