@@ -4,6 +4,7 @@ import TasksMain from '../tasks/tasks';
 import { fragments } from './fragmentStyle.js';
 import { dataList } from './data.js';
 
+
 function App() {
   
  const [data, setNotes] = useState(dataList.data);
@@ -21,6 +22,7 @@ function App() {
       mainColor={styleCards[index][0]}
       borderColor={styleCards[index][1]}
       cardsTitle={elem}
+      cardsIcons={data[0].cardsIcons[index]}
     />
   });
 

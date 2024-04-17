@@ -1,5 +1,9 @@
 import user_1 from "./img/foto_1.svg";
 import user_2 from "./img/foto_2.svg";
+import ToDo_img from './img/ToDo.png';
+import InProgress from './img/InProgress.png';
+import Review from './img/Review.png';
+import Done from './img/Done.png';
 
 let data = [
     {
@@ -9,6 +13,12 @@ let data = [
         'In Progress',
         'Review',
         'Done',
+      ],
+      cardsIcons:[
+        ToDo_img,
+        InProgress,
+        Review,
+        Done
       ],
       tasks: [
         'Christmas Banners',
