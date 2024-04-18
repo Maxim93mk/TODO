@@ -6,47 +6,88 @@ import Review from './img/Review.png';
 import Done from './img/Done.png';
 
 let data = [
-    {
-      id: 1,
-      cards: [
-        'To Do',
-        'In Progress',
-        'Review',
-        'Done',
-      ],
-      cardsIcons:[
-        ToDo_img,
-        InProgress,
-        Review,
-        Done
-      ],
-      tasks: [
-        'Christmas Banners',
-        'Redo Portfolio',
-        'Coffee Break',
-        'Updating Portfolio',
-        'Release to Figma Community',
-        'User Feedback',
-        'Background images from humaaans.com',
-        'Style Guide',
-        'Component Library',
-        'Sticker Components',
-      ],
-      status: [
-        'Label',
-        'Always',
-        'Release',
-        'Feedback',
-        'Sourcing',
-        'UI',
-      ],
-      user: [
-        user_1,
-        user_2,
-      ]
-    }
-  ];
+  {
+    id: 1,
+    name: 'To Do',
+    task: 'Christmas Banners',
+    status: 'Label',
+    user: user_1,
+    icon: ToDo_img
+  },
+  {
+    id: 2,
+    name: 'In Progress',
+    task: 'Coffee Break',
+    status: 'Always',
+    user: user_2,
+    icon: InProgress
+  },
+  {
+    id: 3,
+    name: 'Review',
+    task: 'Release to Figma Community',
+    status: 'Release',
+    user: user_1,
+    icon: Review
+  },
+  {
+    id: 4,
+    name: 'Done',
+    task: 'Style Guide',
+    status: 'UI',
+    user: user_2,
+    icon: Done,
+  },
+  {
+    id: 5,
+    name: 'Done',
+    task: 'Component Library',
+    status: 'UI',
+    user: user_2,
+    icon: Done,
+  },
+  {
+    id: 6,
+    name: 'Done',
+    task: 'Sticker Components',
+    status: 'UI',
+    user: user_2,
+    icon: Done,
+  },
+  {
+    id: 7,
+    name: 'In Progress',
+    task: 'Updating Portfolio',
+    status: 'Webflow',
+    user: user_2,
+    icon: InProgress
+  },
+  {
+    id: 8,
+    name: 'Review',
+    task: 'User Feedback',
+    status: 'Feedback',
+    user: user_1,
+    icon: Review
+  },
+  {
+    id: 9,
+    name: 'To Do',
+    task: 'Redo Portfolio',
+    status: 'Label',
+    user: user_1,
+    icon: ToDo_img
+  },
+  {
+    id: 10,
+    name: 'Review',
+    task: 'Background images from humaaans.com',
+    status: 'Sourcing',
+    user: user_1,
+    icon: Review
+  }
+];
 
-export  const dataList = {
-    data: data
+export const dataList = {
+  data: data
 } 
