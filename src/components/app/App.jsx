@@ -6,8 +6,8 @@ import { dataList } from './data.js';
 
 
 function App() {
-  
- const [data, setNotes] = useState(dataList.data);
+
+  const [data, setNotes] = useState(dataList.data);
 
   let styleCards = [
     fragments.fragment_toDo_main_color,
@@ -15,17 +15,21 @@ function App() {
     fragments.fragment_Review_main_color,
     fragments.fragment_Done_main_color
   ];
+  let cards = [];
 
-  let tasks = data[0].cards.map((elem, index) => {
-    return <TasksMain
-      data={data}
-      mainColor={styleCards[index][0]}
-      borderColor={styleCards[index][1]}
-      cardsTitle={elem}
-      cardsIcons={data[0].cardsIcons[index]}
-    />
+  let tasks = data.map((elem, index) => {
+    if (!cards.includes(elem.name)) {
+      cards.push(elem.name);
+      return <TasksMain
+        key={elem.id}
+        data={data}
+        mainColor={styleCards[index][0]}
+        borderColor={styleCards[index][1]}
+        cardsTitle={elem.name}
+        cardsIcons={elem.icon}
+      />
+    }
   });
-
 
   return (
     <>
