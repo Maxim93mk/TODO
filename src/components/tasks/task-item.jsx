@@ -10,7 +10,7 @@ function TaskItem({ taskName, mainColor, status, user }) {
                 <div className="task-item-list">
                     <h3 className="task-item-header">{taskName}</h3>
                     <div className="user">
-                        <img src={user} alt={"descr"} />
+                        <img src={user} alt={`${user} icon`} />
                         <div className="user-status" style={mainColor}>{status}</div>
                     </div>
                 </div>

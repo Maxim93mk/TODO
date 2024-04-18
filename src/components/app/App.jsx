@@ -17,7 +17,7 @@ function App() {
   ];
   let cards = [];
 
-  let tasks = data.map((elem, index) => {
+  let card = data.map((elem, index) => {
     if (!cards.includes(elem.name)) {
       cards.push(elem.name);
       return <TasksMain
@@ -38,7 +38,7 @@ function App() {
           <div className='tasks-main__img'>
             <h1 className='tasks-main__img-header'>Project Example</h1>
             <div className='tasks-main-blocks'>
-              {tasks}
+              {card}
             </div>
           </div>
         </div>
