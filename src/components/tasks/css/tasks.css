@@ -1,4 +1,4 @@
-.tasks-block{
+.card-section{
     border-radius: 4px; 
     margin-top: 42px;
     max-width: 300px;
@@ -6,21 +6,35 @@
     height: 100%;
 }
 
-.tasks-block-line{
+.card-section-line{
      border-radius: 4px 4px 0px 0px; 
      height: 5px;
 }
-
-.tasks-block__header{
+.card-section-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card-section-header-descr{
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
 }
 
-.tasks-block__title{
+.card-section-header-descr-title{
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 700;    
+}
+
+.card-section-header-addtask{
+    padding: 5px;
+    font-size: 25px;
+    color:#FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.card-section-header-addtask:hover{
+    background-color: rgba(255, 255, 255, 0.3);
 }

@@ -3,27 +3,23 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({data, mainColor, borderColor, cardsTitle, cardsIcons}) {
+function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
 
-    
+
     return (
         <>
-            <div className="tasks-block" style={mainColor}>
-                <div className="tasks-block-line" style={borderColor}></div>
-                <div >
-                    <div className="tasks-block__header">
-                        <img src={cardsIcons} alt={`${cardsTitle} icon`}/>
-                        <h2 className="tasks-block__title">{cardsTitle}</h2>
+            <section className="card-section" style={mainColor}>
+                <div className="card-section-line" style={borderColor}></div>
+                <div className="card-section-header">
+                    <div className="card-section-header-descr">
+                        <img src={cardsIcons} alt={`${cardsTitle} icon`} />
+                        <h2 className="card-section-header-descr-title">{cardsTitle}</h2>
                     </div>
-                    <div className="btns">
-                        <button className='fr'>+</button>
-                        <button>-</button>
-                    </div>
-
+                        <button className="card-section-header-addtask">+</button>
                 </div>
                 {/* {Task} */}
 
-            </div>
+            </section>
         </>
     );
 }
