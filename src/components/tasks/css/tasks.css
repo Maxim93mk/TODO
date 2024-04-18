@@ -27,7 +27,7 @@
     font-weight: 700;    
 }
 
-.card-section-header-addtask{
+.card-section-header-addTask{
     padding: 5px;
     font-size: 25px;
     color:#FFFFFF;
@@ -35,6 +35,6 @@
     cursor: pointer;
 }
 
-.card-section-header-addtask:hover{
+.card-section-header-addTask:hover{
     background-color: rgba(255, 255, 255, 0.3);
 }

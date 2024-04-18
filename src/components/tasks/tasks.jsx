@@ -5,6 +5,11 @@ import '../tasks/css/tasks.css'
 
 function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
 
+    function test(s) {
+        // evt.target.
+      
+         return <p>{s}</p>
+    }
 
     return (
         <>
@@ -15,10 +20,10 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
                         <img src={cardsIcons} alt={`${cardsTitle} icon`} />
                         <h2 className="card-section-header-descr-title">{cardsTitle}</h2>
                     </div>
-                        <button className="card-section-header-addtask">+</button>
+                    
                 </div>
-                {/* {Task} */}
-
+                <button onClick={()=>test("fff")} className="card-section-header-addTask">+</button>
+                {test('zxc')}
             </section>
         </>
     );
