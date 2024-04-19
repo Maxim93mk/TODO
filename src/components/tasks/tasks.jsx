@@ -22,12 +22,15 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
     }
 
     function removeTask(id){
+        console.log(tasksArr)
        let delTask = tasksArr.filter((elem)=>{
             console.log(elem.id, id)
             if(elem.id!=id){
-                setTasksArr(delTask);
+                return elem;
+            //   setTasksArr(delTask);
             }
         })
+        setTasksArr(delTask);
     }
 
     // const inputTask ={
