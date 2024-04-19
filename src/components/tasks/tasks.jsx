@@ -27,7 +27,12 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
     }
 
     let taskBlock = tasksArr.map((elem) =>{
-        return <TaskItem key ={elem.id} id={elem.id}  del={removeTask}/>
+        return <TaskItem 
+        key ={elem.id} 
+        id={elem.id}  
+        del={removeTask} 
+        mainColor={mainColor}
+        borderColor={borderColor}/>
    });
 
     return (
