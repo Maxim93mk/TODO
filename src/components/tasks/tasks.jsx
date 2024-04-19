@@ -9,30 +9,30 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
 
     function addTasks() {
 
-    // const objectTasks =   data.map((elem)=>{
-        //      if(elem.name==cardsTitle){
-        //     tasks.push(elem);
-        //     //    console.log(tasks)
-        //      }
-        // });
-        // console.log(tasks)
-        // const dt = data.map((elem) => {
-        //     console.log(elem.name)
-        //     return elem
-        // })
-         let newTasks = [...data]
+    const objectTasks =   data.map((elem)=>{
+              if(elem.name==cardsTitle){
+            // tasks.push(elem);
+            let arr = [];
+            // arr.push(elem);
+            // console.log(arr)
+                // console.log(elem)
+             let newTasks = [elem, ...tasks];
+             console.log(newTasks)
+            setTasks(newTasks);
+             }
+         });
+       
+         
         //  console.log(newTasks)
-     setTasks(newTasks);
+     
         
     }
 
      let list = tasks.map((elem) =>{
-         console.log(elem.name, cardsTitle)
-       if(elem.name==cardsTitle){
         
         return <TaskItem taskName={elem.task} user={elem.user} status={elem.status} />
      
-   } })
+   })
     return (
         <>
             <section className="card-section" style={mainColor}>
