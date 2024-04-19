@@ -5,64 +5,31 @@ import '../tasks/css/tasks.css'
 
 
 function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
-    //   const [task, setTasks] = useState('');
     const [tasksArr, setTasksArr] = useState([]);
 
-
-// console.log(tasksArr)
-
-
+    // Добавить задачу
     function addTasks() {
         const taskToDo = {
             id: Math.ceil(Math.random()*100),
-        //    value: task,
         }
         let newTasks =[taskToDo, ...tasksArr];
         setTasksArr(newTasks);
     }
 
+    // Удалить задачу
     function removeTask(id){
-        console.log(tasksArr)
        let delTask = tasksArr.filter((elem)=>{
-            console.log(elem.id, id)
             if(elem.id!=id){
                 return elem;
-            //   setTasksArr(delTask);
             }
-        })
+        });
         setTasksArr(delTask);
     }
 
-    // const inputTask ={
-    //     value: ''
-    // }
-
-
-    // function addTasks() {
-
-    // const objectTasks =   data.map((elem)=>{
-    //           if(elem.name==cardsTitle){
-    //         // tasks.push(elem);
-    //         let arr = [];
-    //         // arr.push(elem);
-    //         // console.log(arr)
-    //             // console.log(elem)
-    //          let newTasks = [elem, ...tasks];
-    //          console.log(newTasks)
-    //         setTasks(newTasks);
-    //          }
-    //      });
-       
-         
-    //     //  console.log(newTasks)
-     
-        
-    // }
-
-     let taskBlock = tasksArr.map((elem) =>{
+    let taskBlock = tasksArr.map((elem) =>{
         return <TaskItem key ={elem.id} id={elem.id}  del={removeTask}/>
-        // return <TaskItem key ={elem.id} taskName={elem.task} user={elem.user} status={elem.status} />
-   })
+   });
+
     return (
         <>
             <section className="card-section" style={mainColor}>
@@ -72,9 +39,9 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
                         <img src={cardsIcons} alt={`${cardsTitle} icon`} />
                         <h2 className="card-section-header-descr-title">{cardsTitle}</h2>
                     </div>
-
+                    <button onClick={() => addTasks()} className="card-section-header-addTask">+</button>
                 </div>
-                <button onClick={() => addTasks()} className="card-section-header-addTask">+</button>
+                
                 {taskBlock}
             </section>
         </>

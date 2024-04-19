@@ -12,7 +12,9 @@
     width: 100%;
 }
 
-.task-item-header{
+.task-item-input{
+    max-width: 200px;
+    width: 100%;
     font-size: 14px;
     font-weight: 500;
     border: none;

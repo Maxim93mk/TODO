@@ -11,12 +11,12 @@ function TaskItem({id, del, value, task, taskName, setTaskName, user, status}) {
                 <div className="task-item-list">
                     <textarea value ={taskx} 
                     onChange={(evt)=>setTasks(evt.target.value)}
-                    className="task-item-header"/>
+                    className="task-item-input"/>
                     <div className="user">
                         <img src={user} alt={`${user} icon`} />
                         <div className="user-status" >{status}</div>
-                        <button onClick={()=>del(id)} className="removeTask">-</button>
                     </div>
+                    <button onClick={()=>del(id)} className="removeTask">-</button>
                 </div>
             </div>
         </>
