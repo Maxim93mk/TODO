@@ -5,32 +5,45 @@ import '../tasks/css/tasks.css'
 
 
 function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
-    const [tasks, setTasks] = useState([]);
+    const [task, setTasks] = useState('');
+    const [tasksArr, setTasksArr] = useState([]);
 
     function addTasks() {
-
-    const objectTasks =   data.map((elem)=>{
-              if(elem.name==cardsTitle){
-            // tasks.push(elem);
-            let arr = [];
-            // arr.push(elem);
-            // console.log(arr)
-                // console.log(elem)
-             let newTasks = [elem, ...tasks];
-             console.log(newTasks)
-            setTasks(newTasks);
-             }
-         });
-       
-         
-        //  console.log(newTasks)
-     
-        
+        const taskToDo = {
+            id: Math.ceil(Math.random()*100),
+            value: task,
+        }
+        let newTasks =[taskToDo, ...tasksArr];
+        setTasksArr(newTasks);
     }
 
-     let list = tasks.map((elem) =>{
+
+
+
+    // function addTasks() {
+
+    // const objectTasks =   data.map((elem)=>{
+    //           if(elem.name==cardsTitle){
+    //         // tasks.push(elem);
+    //         let arr = [];
+    //         // arr.push(elem);
+    //         // console.log(arr)
+    //             // console.log(elem)
+    //          let newTasks = [elem, ...tasks];
+    //          console.log(newTasks)
+    //         setTasks(newTasks);
+    //          }
+    //      });
+       
+         
+    //     //  console.log(newTasks)
+     
         
-        return <TaskItem taskName={elem.task} user={elem.user} status={elem.status} />
+    // }
+
+     let taskBlock = tasksArr.map((elem) =>{
+        
+        return <TaskItem key ={elem.id} taskName={elem.task} user={elem.user} status={elem.status} />
      
    })
     return (
@@ -45,7 +58,7 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
 
                 </div>
                 <button onClick={() => addTasks()} className="card-section-header-addTask">+</button>
-                {list}
+                {taskBlock}
             </section>
         </>
     );

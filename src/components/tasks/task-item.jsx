@@ -8,7 +8,7 @@ function TaskItem({taskName, user, status}) {
         <>
             <div className="task-item">
                 <div className="task-item-list">
-                    <h3 className="task-item-header">{taskName}</h3>
+                    <input className="task-item-header">{taskName}</input>
                     <div className="user">
                         <img src={user} alt={`${user} icon`} />
                         <div className="user-status" >{status}</div>
