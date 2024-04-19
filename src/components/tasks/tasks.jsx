@@ -5,19 +5,34 @@ import '../tasks/css/tasks.css'
 
 
 function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
-    const [task, setTasks] = useState('');
+    //   const [task, setTasks] = useState('');
     const [tasksArr, setTasksArr] = useState([]);
+
+
+// console.log(tasksArr)
+
 
     function addTasks() {
         const taskToDo = {
             id: Math.ceil(Math.random()*100),
-            value: task,
+        //    value: task,
         }
         let newTasks =[taskToDo, ...tasksArr];
         setTasksArr(newTasks);
     }
 
+    function removeTask(id){
+       let delTask = tasksArr.filter((elem)=>{
+            console.log(elem.id, id)
+            if(elem.id!=id){
+                setTasksArr(delTask);
+            }
+        })
+    }
 
+    // const inputTask ={
+    //     value: ''
+    // }
 
 
     // function addTasks() {
@@ -42,9 +57,8 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
     // }
 
      let taskBlock = tasksArr.map((elem) =>{
-        
-        return <TaskItem key ={elem.id} taskName={elem.task} user={elem.user} status={elem.status} />
-     
+        return <TaskItem key ={elem.id} id={elem.id}  del={removeTask}/>
+        // return <TaskItem key ={elem.id} taskName={elem.task} user={elem.user} status={elem.status} />
    })
     return (
         <>
