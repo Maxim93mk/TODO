@@ -12,7 +12,58 @@
     width: 100%;
 }
 
-.task-item-header{
+.task-item-textArea{
+    max-width: 200px;
+    min-width: 200px;
+    width: 100%;
     font-size: 14px;
     font-weight: 500;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
+.taskRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btnRemove{
+    border-radius: 20%;
+}
+.btnremoveTask{
+    background-image: url(../img/close_icon_black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    max-width: 15px;
+    max-height: 15px; 
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+.btnremoveTask:hover{
+    background-image: url(../img/close_icon_white.svg);
+}
+
+.user{
+    display: flex;
+    gap: 10px;
+} 
+
+.user-status{
+    padding: 5px 4px;
+    background-color: #59B4D1;
+    text-align: center;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* .task-item-textArea::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #D0368A 0%, #708AD4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+    border-radius: 100px;
+} */
+

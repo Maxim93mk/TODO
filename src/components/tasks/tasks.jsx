@@ -1,36 +1,76 @@
-import React from "react";
+import React, { useState } from 'react';
 import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
+import user_1 from "./img/foto_1.svg";
+import user_2 from "./img/foto_2.svg";
 
+function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
+    const [tasksArr, setTasksArr] = useState([]);
+    const statusArr = [
+        'Label',
+        'Always',
+        'Release',
+        'UI',
+        'Sourcing',
+        'Feedback',
+        'Webflow'
+    ];
+    const usersArr = [
+        user_1,
+        user_2
+    ];
 
-function TasksMain({data, mainColor, borderColor, cardsTitle, cardsIcons}) {
+    // Случайное значение массива
+    const getRandomNumber = (array) => {
+        let minVal = 0, maxVal = array.length;
+        let randomIndex = Math.floor(minVal + Math.random() * (maxVal - minVal));
+        return array[randomIndex];
+    };
 
-    function randomNumber(min, max) {
-        let rand = min + Math.random() * (max + 1 - min);
-        return Math.floor(rand);
-    }
-
-    let Task = data[0].tasks.map((elem, index) => {
-        let taskIndex = randomNumber(0, 9);
-
-        if (index == taskIndex) {
-            let statusIndex = randomNumber(0, 5);
-            let userIndex = randomNumber(0, 1);
-            return <TaskItem taskName={elem} mainColor={mainColor} status={data[0].status[statusIndex]} user={data[0].user[userIndex]} />
+    // Добавить задачу
+    function addTasks() {
+        const taskToDo = {
+            id: Math.floor(Math.random() * 100),
         }
+        let newTasks = [taskToDo, ...tasksArr];
+        setTasksArr(newTasks);
+    };
+
+    // Удалить задачу
+    function removeTask(id) {
+        let delTask = tasksArr.filter((elem) => {
+            if (elem.id !== id) {
+                return elem;
+            }
+        });
+        setTasksArr(delTask);
+    };
+
+    let taskBlock = tasksArr.map((elem) => {
+        return <TaskItem
+            key={elem.id}
+            id={elem.id}
+            del={removeTask}
+            mainColor={mainColor}
+            status={getRandomNumber(statusArr)}
+            user = {getRandomNumber(usersArr)}
+        />
     });
 
     return (
         <>
-            <div className="tasks-block" style={mainColor}>
-                <div className="tasks-block-line" style={borderColor}></div>
-                <div className="tasks-block__header">
-                    <img src={cardsIcons} />
-                    <h2 className="tasks-block__title">{cardsTitle}</h2>
+            <section className="card-section" style={mainColor}>
+                <div className="card-section-line" style={borderColor}></div>
+                <div className="card-section-header">
+                    <div className="card-section-header-descr">
+                        <img src={cardsIcons} alt={`${cardsTitle} icon`} />
+                        <h2 className="card-section-header-descr-title">{cardsTitle}</h2>
+                    </div>
+                    <button onClick={() => addTasks()} className="card-section-header-addTask">+</button>
                 </div>
-                
-                {Task}
-            </div>
+
+                {taskBlock}
+            </section>
         </>
     );
 }

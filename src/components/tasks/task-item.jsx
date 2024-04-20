@@ -1,15 +1,43 @@
-import React from "react";
-import TaskUser from "./tasks-user";
+import React, { useState } from 'react';
 import './css/task-item.css';
 
-function TaskItem({ taskName, mainColor, status, user }) {
+function TaskItem({ id, del, mainColor, status, user }) {
+    const [taskx, setTasks] = useState([]);
+    const [isHover, setIsHover] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
+
+    const boxStyle = {
+        backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
+    };
 
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
-                    <h3 className="task-item-header">{taskName}</h3>
-                    <TaskUser mainColor={mainColor} status={status} user={user}/>
+                    <textarea value={taskx}
+                        onChange={(evt) => setTasks(evt.target.value)}
+                        className="task-item-textArea"
+                        placeholder='Введите наименование задачи...'
+                        autoFocus ></textarea>
+                    <div className="taskRow">
+                        <div className='user'>
+                            <img src={user} alt={`${user} icon`} />
+                            <div className="user-status" style={mainColor}>{status}</div>
+                        </div>
+                        <div className='btnRemove'
+                            style={boxStyle}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}>
+                            <button onClick={() => del(id)} className="btnremoveTask"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
