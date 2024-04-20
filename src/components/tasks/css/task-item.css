@@ -31,19 +31,19 @@
     border-radius: 20%;
 }
 .btnremoveTask{
-    background-image: url(../img/3.svg);
+    background-image: url(../img/close_icon_black.svg);
     background-repeat: no-repeat;
     background-position: center;
     padding: 15px;
-    max-width: 1px;
-    max-height: 1px; 
+    max-width: 15px;
+    max-height: 15px; 
     height: 100%;
     width: 100%;
     cursor: pointer;
     border: none;
 }
 .btnremoveTask:hover{
-    background-image: url(../img/4.svg);
+    background-image: url(../img/close_icon_white.svg);
 }
 
 .user{
