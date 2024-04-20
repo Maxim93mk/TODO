@@ -4,7 +4,7 @@ import '../tasks/css/tasks.css'
 
 
 
-function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
+function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
     const [tasksArr, setTasksArr] = useState([]);
 
     // Добавить задачу
@@ -19,7 +19,7 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
     // Удалить задачу
     function removeTask(id){
        let delTask = tasksArr.filter((elem)=>{
-            if(elem.id!=id){
+            if(elem.id!==id){
                 return elem;
             }
         });
@@ -31,8 +31,7 @@ function TasksMain({ data, mainColor, borderColor, cardsTitle, cardsIcons }) {
         key ={elem.id} 
         id={elem.id}  
         del={removeTask} 
-        mainColor={mainColor}
-        borderColor={borderColor}/>
+        mainColor={mainColor}/>
    });
 
     return (

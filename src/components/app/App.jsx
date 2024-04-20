@@ -1,8 +1,7 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import TasksMain from '../tasks/tasks';
 import { fragments } from './fragmentStyle.js';
-import { dataList } from './data.js';
 import ToDo_img from './img/ToDo.png'
 import InProgress from './img/InProgress.png';
 import Review from './img/Review.png';

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import TaskUser from "./tasks-user";
 import './css/task-item.css';
-import { hover } from '@testing-library/user-event/dist/hover';
+import user_1 from "./img/foto_1.svg";
+import user_2 from "./img/foto_2.svg";
 
-function TaskItem({id, del, value, task, taskName, setTaskName, user, status, mainColor}) {
-     const [taskx, setTasks] = useState([]);
+function TaskItem({id, del, mainColor}) {
+    const [taskx, setTasks] = useState([]);
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -15,12 +15,29 @@ function TaskItem({id, del, value, task, taskName, setTaskName, user, status, ma
        setIsHover(false);
     };
     
+    const statusArr = [
+        'Label',
+        'Always',
+        'Release',
+        'UI',
+        'Sourcing',
+        'Feedback',
+        'Webflow'
+      ];
+
+      const usersArr = [
+        user_1,
+        user_2
+      ];
+
+
+
     // const fill = mainColor.backgroundColor;
-    const fill = mainColor.backgroundColor;
+    //const fill = mainColor.backgroundColor;
 
     const boxStyle = {
         borderRadius: '20%',
-        backgroundColor: isHover ? fill  : '#ffffff',
+        backgroundColor: isHover ? mainColor.backgroundColor  : '#ffffff',
      };
     return (
         <>
@@ -33,8 +50,8 @@ function TaskItem({id, del, value, task, taskName, setTaskName, user, status, ma
                     autoFocus ></textarea>
                     
                     <div className="taskRow">
-                        <img src={user} alt={`${user} icon`} />
-                        <div className="user-status" >{status}</div>
+                        <img src={usersArr[1]} alt={`${usersArr[1]} icon`} />
+                        <div className="user-status" >{statusArr[0]}</div>
                         <div className='btnRemove' 
                         style={boxStyle} 
                         onMouseEnter={handleMouseEnter}
