@@ -1,62 +1,41 @@
 import React, { useState } from 'react';
 import './css/task-item.css';
-import user_1 from "./img/foto_1.svg";
-import user_2 from "./img/foto_2.svg";
 
-function TaskItem({id, del, mainColor}) {
+function TaskItem({ id, del, mainColor, status, user }) {
     const [taskx, setTasks] = useState([]);
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
-       setIsHover(true);
+        setIsHover(true);
     };
- 
+
     const handleMouseLeave = () => {
-       setIsHover(false);
+        setIsHover(false);
     };
-    
-    const statusArr = [
-        'Label',
-        'Always',
-        'Release',
-        'UI',
-        'Sourcing',
-        'Feedback',
-        'Webflow'
-      ];
-
-      const usersArr = [
-        user_1,
-        user_2
-      ];
-
-
-
-    // const fill = mainColor.backgroundColor;
-    //const fill = mainColor.backgroundColor;
 
     const boxStyle = {
-        borderRadius: '20%',
-        backgroundColor: isHover ? mainColor.backgroundColor  : '#ffffff',
-     };
+        backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
+    };
+
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
-                    <textarea value ={taskx} 
-                    onChange={(evt)=>setTasks(evt.target.value)}
-                    className="task-item-textArea"
-                    placeholder='Введите наименование задачи...'
-                    autoFocus ></textarea>
-                    
+                    <textarea value={taskx}
+                        onChange={(evt) => setTasks(evt.target.value)}
+                        className="task-item-textArea"
+                        placeholder='Введите наименование задачи...'
+                        autoFocus ></textarea>
                     <div className="taskRow">
-                        <img src={usersArr[1]} alt={`${usersArr[1]} icon`} />
-                        <div className="user-status" >{statusArr[0]}</div>
-                        <div className='btnRemove' 
-                        style={boxStyle} 
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}>
-                        <button onClick={()=>del(id)} className="btnremoveTask"></button>
+                        <div className='user'>
+                            <img src={user} alt={`${user} icon`} />
+                            <div className="user-status" style={mainColor}>{status}</div>
+                        </div>
+                        <div className='btnRemove'
+                            style={boxStyle}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}>
+                            <button onClick={() => del(id)} className="btnremoveTask"></button>
                         </div>
                     </div>
                 </div>
