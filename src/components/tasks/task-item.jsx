@@ -16,7 +16,6 @@ function TaskItem({ id, del, mainColor, status, user }) {
     const boxStyle = {
         backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
     };
-
     return (
         <>
             <div className="task-item">
