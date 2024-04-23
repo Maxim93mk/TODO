@@ -16,6 +16,9 @@ function TaskItem({ id, del, mainColor, status, user }) {
     const boxStyle = {
         backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
     };
+    //  localStorage.setItem(id, JSON.stringify(taskx));
+    // localStorage.setItem(id, taskx);
+
     return (
         <>
             <div className="task-item">

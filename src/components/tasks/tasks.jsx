@@ -34,6 +34,7 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTasksArr(newTasks);
+        localStorage.setItem(taskToDo.id, JSON.stringify(newTasks));
     };
 
     // Удалить задачу
@@ -45,8 +46,9 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         });
         setTasksArr(delTask);
     };
-
+    
     let taskBlock = tasksArr.map((elem) => {
+        if(localStorage.getItem(elem.id)!=null){
         return <TaskItem
             key={elem.id}
             id={elem.id}
@@ -54,9 +56,13 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
             user = {getRandomNumber(usersArr)}
-        />
+        
+        /> }
     });
+    
 
+   
+    console.log(taskBlock)
     return (
         <>
             <section className="card-section" style={mainColor}>
