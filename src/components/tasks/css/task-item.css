@@ -31,7 +31,7 @@
     border-radius: 20%;
 }
 .btnremoveTask{
-    background-image: url(../img/close_icon_black.svg);
+    background-image: url(../../../../public/img/close_icon_black.svg);
     background-repeat: no-repeat;
     background-position: center;
     padding: 15px;
@@ -43,7 +43,7 @@
     border: none;
 }
 .btnremoveTask:hover{
-    background-image: url(../img/close_icon_white.svg);
+    background-image: url(../../../../public/img/close_icon_white.svg);
 }
 
 .user{

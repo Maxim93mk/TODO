@@ -12,7 +12,7 @@
 }
 
 .tasks-main__img{
-  background-image: url(./img/main_img.png);
+  background-image: url(../../../public/img/main_img.png);
   background-repeat: no-repeat;
   background-position: center;
   max-width: 1011px;

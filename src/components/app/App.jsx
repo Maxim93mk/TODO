@@ -2,10 +2,6 @@ import './App.css';
 import React from 'react';
 import TasksMain from '../tasks/tasks';
 import { fragments } from './fragmentStyle.js';
-import ToDo_img from './img/ToDo.png'
-import InProgress from './img/InProgress.png';
-import Review from './img/Review.png';
-import Done from './img/Done.png';
 
 function App() {
 
@@ -13,28 +9,28 @@ function App() {
     {
       id: 1,
       name: 'To Do',
-      icon: ToDo_img,
+      icon: '/img/ToDo.png',
       mainColor: fragments.fragment_toDo_main_color[0],
       borderColor: fragments.fragment_toDo_main_color[1],
     },
     {
       id: 2,
       name: 'In Progress',
-      icon: InProgress,
+      icon: '/img/InProgress.png',
       mainColor: fragments.fragment_inProgress_main_color[0],
       borderColor: fragments.fragment_inProgress_main_color[1],
     },
     {
       id: 3,
       name: 'Review',
-      icon: Review,
+      icon: '/img/Review.png',
       mainColor: fragments.fragment_Review_main_color[0],
       borderColor: fragments.fragment_Review_main_color[1],
     },
     {
       id: 4,
       name: 'Done',
-      icon: Done,
+      icon: '/img/Done.png',
       mainColor: fragments.fragment_Done_main_color[0],
       borderColor: fragments.fragment_Done_main_color[1],
     },

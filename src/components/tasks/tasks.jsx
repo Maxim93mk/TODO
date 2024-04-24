@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
-import user_1 from "./img/foto_1.svg";
-import user_2 from "./img/foto_2.svg";
+
 
 function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
     const [tasksArr, setTasksArr] = useState([]);
@@ -16,8 +15,8 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         'Webflow'
     ];
     const usersArr = [
-        user_1,
-        user_2
+        '/img/foto_1.svg',
+        '/img/foto_2.svg'
     ];
 
     // Случайное значение массива
