@@ -34,7 +34,7 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTasksArr(newTasks);
-        localStorage.setItem(taskToDo.id, JSON.stringify(newTasks));
+        localStorage.setItem('key', JSON.stringify(newTasks));
     };
 
     // Удалить задачу
@@ -46,23 +46,20 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         });
         setTasksArr(delTask);
     };
-    
+
     let taskBlock = tasksArr.map((elem) => {
-        if(localStorage.getItem(elem.id)!=null){
+        // console.log(localStorage.getItem('key'));
         return <TaskItem
             key={elem.id}
             id={elem.id}
             del={removeTask}
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
-            user = {getRandomNumber(usersArr)}
-        
-        /> }
-    });
-    
+            user={getRandomNumber(usersArr)}
 
-   
-    console.log(taskBlock)
+        />
+    });
+    // taskBlock = localStorage.getItem('key');
     return (
         <>
             <section className="card-section" style={mainColor}>
