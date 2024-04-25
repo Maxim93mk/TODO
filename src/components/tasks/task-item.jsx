@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './css/task-item.css';
 
-function TaskItem({ id, del, mainColor, status, user }) {
-    const [taskx, setTasks] = useState(localStorage.getItem(id) ? JSON.parse(localStorage.getItem(id)) : []);
+function TaskItem({ id, del, mainColor, status, user, cardsTitle}) {
+    const [taskx, setTasks] = useState(localStorage.getItem(cardsTitle) ? JSON.parse(localStorage.getItem(cardsTitle)) : []);
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -18,17 +18,21 @@ function TaskItem({ id, del, mainColor, status, user }) {
     };
 
     // Локальное хранилище
-    const setTodosWithSave = (newTodos) => {
-        setTasks(newTodos);
-        localStorage.setItem(id, JSON.stringify(newTodos))
-  }
-
+//     const setTodosWithSave = (newTodos) => {
+//         setTasks(newTodos);
+//         let value = JSON.parse(localStorage.getItem(cardsTitle));
+//         value.push(newTodos)
+//         console.log(value)
+//         // localStorage.setItem(cardsTitle, newTodos)
+//   }
+let arr = localStorage.setItem(cardsTitle = "gtkkt")
+console.log(arr)
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
                     <textarea value={taskx}
-                        onChange={(evt) => setTodosWithSave(evt.target.value)}
+                        onChange={(evt) => setTasks(evt.target.value)}
                         className="task-item-textArea"
                         placeholder='Введите наименование задачи...'
                         autoFocus ></textarea>
