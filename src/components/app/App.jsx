@@ -39,7 +39,6 @@ function App() {
   let card = cards.map((elem) => {
     return <TasksMain
       key={elem.id}
-      id = {elem.id}
       mainColor={elem.mainColor}
       borderColor={elem.borderColor}
       cardsTitle={elem.name}

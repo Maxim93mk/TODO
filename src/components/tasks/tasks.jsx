@@ -3,8 +3,8 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({ id, mainColor, borderColor, cardsTitle, cardsIcons }) {
-    const [tasksArr, setTasksArr] = useState(localStorage.getItem(id) ? JSON.parse(localStorage.getItem(id)) : []);
+function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
+    const [tasksArr, setTasksArr] = useState(localStorage.getItem(cardsTitle) ? JSON.parse(localStorage.getItem(cardsTitle)) : []);
     const statusArr = [
         'Label',
         'Always',
@@ -22,7 +22,7 @@ function TasksMain({ id, mainColor, borderColor, cardsTitle, cardsIcons }) {
     // Локальное хранилище
     const setTodosWithSave = (newTodos) => {
         setTasksArr(newTodos);
-        localStorage.setItem(id, JSON.stringify(newTodos))
+        localStorage.setItem(cardsTitle, JSON.stringify(newTodos))
   }
     // Случайное значение массива
     const getRandomNumber = (array) => {
@@ -35,6 +35,7 @@ function TasksMain({ id, mainColor, borderColor, cardsTitle, cardsIcons }) {
     function addTasks() {
         const taskToDo = {
             id: Math.floor(Math.random() * 100),
+            value: 'x'
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTodosWithSave(newTasks);
@@ -55,12 +56,11 @@ function TasksMain({ id, mainColor, borderColor, cardsTitle, cardsIcons }) {
         return <TaskItem
             key={elem.id}
             id={elem.id}
-            idBlock = {idBlock}
             del={removeTask}
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
             user={getRandomNumber(usersArr)}
-
+            value = {elem.value}
         />
     });
 
