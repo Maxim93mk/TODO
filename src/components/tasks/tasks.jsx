@@ -3,8 +3,8 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
-    const [tasksArr, setTasksArr] = useState([]);
+function TasksMain({ id, mainColor, borderColor, cardsTitle, cardsIcons }) {
+    const [tasksArr, setTasksArr] = useState(localStorage.getItem(id) ? JSON.parse(localStorage.getItem(id)) : []);
     const statusArr = [
         'Label',
         'Always',
@@ -19,6 +19,11 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
         '/img/foto_2.svg'
     ];
 
+    // Локальное хранилище
+    const setTodosWithSave = (newTodos) => {
+        setTasksArr(newTodos);
+        localStorage.setItem(id, JSON.stringify(newTodos))
+  }
     // Случайное значение массива
     const getRandomNumber = (array) => {
         let minVal = 0, maxVal = array.length;
@@ -32,8 +37,7 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
             id: Math.floor(Math.random() * 100),
         }
         let newTasks = [taskToDo, ...tasksArr];
-        setTasksArr(newTasks);
-        localStorage.setItem('key', JSON.stringify(newTasks));
+        setTodosWithSave(newTasks);
     };
 
     // Удалить задачу
@@ -43,14 +47,15 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
                 return elem;
             }
         });
-        setTasksArr(delTask);
+        setTodosWithSave(delTask);
     };
-
+   
+     
     let taskBlock = tasksArr.map((elem) => {
-        // console.log(localStorage.getItem('key'));
         return <TaskItem
             key={elem.id}
             id={elem.id}
+            idBlock = {idBlock}
             del={removeTask}
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
@@ -58,7 +63,7 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
 
         />
     });
-    // taskBlock = localStorage.getItem('key');
+
     return (
         <>
             <section className="card-section" style={mainColor}>

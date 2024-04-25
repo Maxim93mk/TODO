@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/task-item.css';
 
 function TaskItem({ id, del, mainColor, status, user }) {
-    const [taskx, setTasks] = useState([]);
+    const [taskx, setTasks] = useState(localStorage.getItem(id) ? JSON.parse(localStorage.getItem(id)) : []);
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -16,15 +16,19 @@ function TaskItem({ id, del, mainColor, status, user }) {
     const boxStyle = {
         backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
     };
-    //  localStorage.setItem(id, JSON.stringify(taskx));
-    // localStorage.setItem(id, taskx);
+
+    // Локальное хранилище
+    const setTodosWithSave = (newTodos) => {
+        setTasks(newTodos);
+        localStorage.setItem(id, JSON.stringify(newTodos))
+  }
 
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
                     <textarea value={taskx}
-                        onChange={(evt) => setTasks(evt.target.value)}
+                        onChange={(evt) => setTodosWithSave(evt.target.value)}
                         className="task-item-textArea"
                         placeholder='Введите наименование задачи...'
                         autoFocus ></textarea>
