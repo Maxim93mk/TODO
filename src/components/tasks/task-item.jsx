@@ -18,21 +18,29 @@ function TaskItem({ id, del, mainColor, status, user, cardsTitle}) {
     };
 
     // Локальное хранилище
-//     const setTodosWithSave = (newTodos) => {
-//         setTasks(newTodos);
-//         let value = JSON.parse(localStorage.getItem(cardsTitle));
-//         value.push(newTodos)
-//         console.log(value)
-//         // localStorage.setItem(cardsTitle, newTodos)
-//   }
-let arr = localStorage.setItem(cardsTitle = "gtkkt")
-console.log(arr)
+    const setTodosWithSave = (newValue) => {
+            
+
+         setTasks(newValue);
+        // let value = JSON.parse(localStorage.getItem(cardsTitle));
+        // value.push(newTodos)
+        // console.log(value)
+        // localStorage.setItem(cardsTitle, newTodos)
+  }
+
+
+// let test = JSON.parse(localStorage.getItem(cardsTitle));
+
+//  localStorage.setItem(cardsTitle[3]['value'], "14");
+//  setTasks(taskx[0]['value']='25')
+console.log(taskx);
+// console.log(localStorage.getItem(cardsTitle[0]['value']))
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
                     <textarea value={taskx}
-                        onChange={(evt) => setTasks(evt.target.value)}
+                        onChange={(evt) => setTodosWithSave(evt.target.value)}
                         className="task-item-textArea"
                         placeholder='Введите наименование задачи...'
                         autoFocus ></textarea>
