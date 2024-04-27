@@ -4,7 +4,11 @@ import '../tasks/css/tasks.css'
 
 
 function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
+    const [toDo, setToDo] = useState('');
     const [tasksArr, setTasksArr] = useState(localStorage.getItem(cardsTitle) ? JSON.parse(localStorage.getItem(cardsTitle)) : []);
+  
+    console.log(toDo)
+  
     const statusArr = [
         'Label',
         'Always',
@@ -35,10 +39,11 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
     function addTasks() {
         const taskToDo = {
             id: Math.floor(Math.random() * 100),
-            value: ''
+            value: toDo
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTodosWithSave(newTasks);
+          setToDo('');
     };
 
     // Удалить задачу
@@ -60,7 +65,9 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
             user={getRandomNumber(usersArr)}
-            cardsTitle = {cardsTitle}
+            toDo = {toDo}
+            setToDo = {setToDo}
+            value = {elem.value}
         />
     });
 
