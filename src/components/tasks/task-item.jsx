@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './css/task-item.css';
 
-function TaskItem({ id, del, mainColor, status, user, value, tasksArr }) {
-    const [taskx, setTasks] = useState(value);
+function TaskItem({ id, del, mainColor, status, user, valueL, tasksArr }) {
+    const [taskx, setTasks] = useState(valueL);
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -16,30 +16,38 @@ function TaskItem({ id, del, mainColor, status, user, value, tasksArr }) {
     const boxStyle = {
         backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
     };
+    
+ const handleBlur = () => {   
+        const valueArr = tasksArr.map((elem) => {
+            if (elem.id === id) {
+                return elem.valueL = taskx;
 
-    const valueArr = tasksArr.map((elem) => {
+            }
+        });
+        
+        
 
-        if (elem.id === id) {
-            return elem.value = taskx;
-
-        }
-
-    });
 
     const valueFilter = valueArr.filter((elem) => {
+
         if (elem !== undefined) {
             return elem;
         }
     });
+    console.log('Content auto-saved:', valueFilter);
+return valueFilter;
+ 
+
+};
 
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
                     <textarea
-                        value={valueFilter}
+                        value={handleBlur()}
                         onChange={(evt) => setTasks(evt.target.value)}
-                        //  onBlur={() => setTasks(taskx)}
+                        // onBlur={()=>console.log(handleBlur())}
                         className="task-item-textArea"
                         placeholder='Введите наименование задачи...'
                         autoFocus

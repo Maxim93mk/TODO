@@ -33,7 +33,6 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
     function addTasks() {
         const taskToDo = {
             id: Math.floor(Math.random() * 100),
-            value: ''
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTodosWithSave(newTasks);
@@ -57,7 +56,7 @@ function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
             user={getRandomNumber(usersArr)}
-            value={elem.value}
+            valueL={elem.value}
             tasksArr={tasksArr}
         />
     });
