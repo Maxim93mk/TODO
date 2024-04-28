@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/task-item.css';
 
-function TaskItem({ id, del, mainColor, status, user, toDo, setToDo, value, tasksArr, cardsTitle, setTodosWithSave }) {
+function TaskItem({ id, del, mainColor, status, user, value, tasksArr }) {
     const [taskx, setTasks] = useState(value);
     const [isHover, setIsHover] = useState(false);
 
@@ -16,29 +16,8 @@ function TaskItem({ id, del, mainColor, status, user, toDo, setToDo, value, task
     const boxStyle = {
         backgroundColor: isHover ? mainColor.backgroundColor : '#ffffff',
     };
-    // console.log(value, toDo)
-    // Локальное хранилище
-    //     const setTodosWithSave = (newValue) => {
 
-
-    //         //  setTasks(newValue);
-    //         // let value = JSON.parse(localStorage.getItem(cardsTitle));
-    //         // value.push(newTodos)
-    //         // console.log(value)
-    //         // localStorage.setItem(cardsTitle, newTodos)
-    //   }
-    // //   let val = tasksArr.map((elem)=>{
-    //     return elem.value = taskx;
-    //   });
-
-    //   console.log(val)
-
-    // const test = (newVal)=>{
-
-    //   let zx = [newVal, ...taskx]  
-    //   setTasks(zx)
-    // }
-    let test = tasksArr.map((elem) => {
+    const valueArr = tasksArr.map((elem) => {
 
         if (elem.id === id) {
             return elem.value = taskx;
@@ -47,24 +26,18 @@ function TaskItem({ id, del, mainColor, status, user, toDo, setToDo, value, task
 
     });
 
-    let testZ = test.filter((elem) => {
+    const valueFilter = valueArr.filter((elem) => {
         if (elem !== undefined) {
-           return elem;
+            return elem;
         }
     });
 
-
-    //  localStorage.setItem(cardsTitle[3]['value'], "14");
-    //  setTasks(taskx[0]['value']='25')
-    // console.log(localStorage.getItem(cardsTitle[0]['value']))
-    // console.log(taskx)
-    // setTasks(taskx)
     return (
         <>
             <div className="task-item">
                 <div className="task-item-list">
                     <textarea
-                        value={testZ}
+                        value={valueFilter}
                         onChange={(evt) => setTasks(evt.target.value)}
                         //  onBlur={() => setTasks(taskx)}
                         className="task-item-textArea"

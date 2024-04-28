@@ -3,8 +3,7 @@ import TaskItem from "./task-item";
 import '../tasks/css/tasks.css'
 
 
-function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
-    const [toDo, setToDo] = useState('');
+function TasksMain({ mainColor, borderColor, cardsTitle, cardsIcons }) {
     const [tasksArr, setTasksArr] = useState(localStorage.getItem(cardsTitle) ? JSON.parse(localStorage.getItem(cardsTitle)) : []);
     const statusArr = [
         'Label',
@@ -23,7 +22,7 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
     const setTodosWithSave = (newTodos) => {
         setTasksArr(newTodos);
         localStorage.setItem(cardsTitle, JSON.stringify(newTodos))
-  }
+    }
     // Случайное значение массива
     const getRandomNumber = (array) => {
         let minVal = 0, maxVal = array.length;
@@ -48,8 +47,8 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
         });
         setTodosWithSave(delTask);
     };
-   
-     
+
+
     let taskBlock = tasksArr.map((elem) => {
         return <TaskItem
             key={elem.id}
@@ -58,12 +57,8 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
             mainColor={mainColor}
             status={getRandomNumber(statusArr)}
             user={getRandomNumber(usersArr)}
-            toDo = {toDo}
-            setToDo = {setToDo}
-            value = {elem.value}
-            tasksArr ={tasksArr}
-            cardsTitle = {cardsTitle}
-            setTodosWithSave = {setTodosWithSave}
+            value={elem.value}
+            tasksArr={tasksArr}
         />
     });
 
