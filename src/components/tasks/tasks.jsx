@@ -6,9 +6,6 @@ import '../tasks/css/tasks.css'
 function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
     const [toDo, setToDo] = useState('');
     const [tasksArr, setTasksArr] = useState(localStorage.getItem(cardsTitle) ? JSON.parse(localStorage.getItem(cardsTitle)) : []);
-  
-    console.log(toDo)
-  
     const statusArr = [
         'Label',
         'Always',
@@ -22,7 +19,6 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
         '/img/foto_1.svg',
         '/img/foto_2.svg'
     ];
-
     // Локальное хранилище
     const setTodosWithSave = (newTodos) => {
         setTasksArr(newTodos);
@@ -34,18 +30,15 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
         let randomIndex = Math.floor(minVal + Math.random() * (maxVal - minVal));
         return array[randomIndex];
     };
-
     // Добавить задачу
     function addTasks() {
         const taskToDo = {
             id: Math.floor(Math.random() * 100),
-            value: toDo
+            value: ''
         }
         let newTasks = [taskToDo, ...tasksArr];
         setTodosWithSave(newTasks);
-          setToDo('');
     };
-
     // Удалить задачу
     function removeTask(id) {
         let delTask = tasksArr.filter((elem) => {
@@ -68,6 +61,9 @@ function TasksMain({mainColor, borderColor, cardsTitle, cardsIcons}) {
             toDo = {toDo}
             setToDo = {setToDo}
             value = {elem.value}
+            tasksArr ={tasksArr}
+            cardsTitle = {cardsTitle}
+            setTodosWithSave = {setTodosWithSave}
         />
     });
 
